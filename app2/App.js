@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient'; //se importa el lineargradient
 
-import icon from './assets/LOG_AMBIENTE.png';
+import icon from './assets/LOG_AMBIENTE.png'; //logo de medioambiente de la municipalidad
 
 export default function App() {
   return (
@@ -15,7 +15,7 @@ export default function App() {
         <Text style={styles.subText}>Departamento de Medioambiente</Text>
 
         <Image
-        source={{ uri: 'https://static-00.iconduck.com/assets.00/google-icon-2048x673-w3o7skkh.png' }} 
+        source={{ uri: 'https://static-00.iconduck.com/assets.00/google-icon-2048x673-w3o7skkh.png' }} //imagen de internet de google
         style={styles.googleLogo}
       />
 
@@ -33,8 +33,8 @@ const styles = StyleSheet.create({
   mainImage: {
     width: 250,
     height: 250,
-    resizeMode: 'contain', // Esto asegura que la imagen conserve su calidad
-    marginBottom: 10, // Espacio entre la imagen y el texto
+    resizeMode: 'contain', 
+    marginBottom: 10,
   },
   mainText: {
     fontSize: 22,
