@@ -1,20 +1,61 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, Image } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient'; //se importa el lineargradient
+
+import icon from './assets/LOG_AMBIENTE.png';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <LinearGradient
+      colors={['#f58723', '#fbbb0c', '#93a31c']} //colores para el degradez
+      style={styles.container}
+    >
+        <Image source={icon} style={{ width: 250, height: 250 }} />
+        <Text style={styles.mainText}>Municipalidad de Quinchao</Text>
+        <Text style={styles.subText}>Departamento de Medioambiente</Text>
+
+        <Image
+        source={{ uri: 'https://static-00.iconduck.com/assets.00/google-icon-2048x673-w3o7skkh.png' }} 
+        style={styles.googleLogo}
+      />
+
       <StatusBar style="auto" />
-    </View>
+    </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  mainImage: {
+    width: 250,
+    height: 250,
+    resizeMode: 'contain', // Esto asegura que la imagen conserve su calidad
+    marginBottom: 10, // Espacio entre la imagen y el texto
+  },
+  mainText: {
+    fontSize: 22,
+    fontWeight: '600',
+    color: 'green',
+  },
+  subText: {
+    fontSize: 13,
+    fontWeight: '400',
+    color: 'green',
+  },
+  text: {
+    fontSize: 20,
+    fontWeight: '600',
+    color: 'green',   
+  },
+  googleLogo: {
+    width: 200, 
+    height: 200,
+    resizeMode: 'contain',
+    marginTop: 10,
+    marginBottom: 1, 
+  }
 });
