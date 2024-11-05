@@ -2,82 +2,73 @@ import React from 'react';
 import { Text, View, StyleSheet, Image, StatusBar, Button, Alert, TouchableHighlight, Pressable } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import icon from './assets/LOG_AMBIENTE.png'; //se importa una imagen local desde los archivos del pyoyecto (assets)
+import icon from './assets/LOG_AMBIENTE.png';
+import HomeScreen from './HomeScreen';
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+function MainScreen({ navigation }) { 
   return (
-    <LinearGradient //se aplica un fondo degradado a la pantalla con LinearGradient
-      colors={['#f58723', '#fbbb0c', '#0b110d']}
-      style={styles.container}
-    >
+    <LinearGradient colors={['#f58723', '#fbbb0c', '#0b110d']} style={styles.container}>
       <View style={styles.container}>
-        <Image source={icon} style={{ //se define el tamaño de la imagen importada al principio
-          width: 250,
-          height: 250 
-        }}></Image> 
-        <Text style={styles.mainText}>Municipalidad de Quinchao</Text> 
+        <Image source={icon} style={{ width: 250, height: 250 }} />
+        <Text style={styles.mainText}>Municipalidad de Quinchao</Text>
         <Text style={styles.subText}>Departamento de Medioambiente</Text>
-        <StatusBar style="auto" /> 
+        <StatusBar style="auto" />
 
-        <View style={{ marginVertical: 5 }}>
-          <Button //boton con alerta al hacer click 
-            title="Pulsa aquí"
-            color="#39b54a"
-            onPress={() => Alert.alert('¡Alerta!', 'Este es un mensaje con button')}
-            />
-        </View>
-
-        <View style={{ marginVertical: 5 }}>    
-          <TouchableHighlight // TouchableHighlight: boton con alerta al hacer click
-            onPress={() => Alert.alert('¡Alerta!', 'Aguante touchable')}
-            underlayColor='#cce7cc'
-            style={{ padding: 9, backgroundColor: '#19cc98', borderRadius: 7 }}
-          >
-            <Text style={{ color: '#fff'}}>Presiona Aquí</Text>
-          </TouchableHighlight>
-        </View>
-
-        <View style={{ marginVertical: 5 }}> 
-          <Pressable //Pressable: boton con alerta al hacer click
-            onPress={() => Alert.alert('¡Alerta!', 'Botón con icono de Google')}
+        <View style={{ marginVertical: 50 }}> 
+          <Pressable
+            onPress={() => navigation.navigate('Home')}
             style={({ pressed }) => [
             styles.pressableButton,
             { backgroundColor: pressed ? '#cce7cc' : '#39b54a' }
           ]}
         >
             <View style={styles.iconTextContainer}>
-             <Icon name="google" size={20} color="#fff" style={{ marginRight: 5 }} />
-              <Text style={styles.buttonText}>Presione Aquí</Text>
+             <Icon name="user" size={20} color="#fff" style={{ marginRight: 5 }} />
+              <Text style={styles.buttonText}>Iniciar Sesión</Text>
             </View>
           </Pressable>
         </View>
-      </View>    
-    
+
+      </View>
     </LinearGradient>
   );
 }
 
-//se define los estilos de los componentes usados
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Main" component={MainScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  mainText: { //texto principal "Municipalidad de Quinchao"
-    fontSize: 22, //tamaño de texto
-    fontWeight: '600', //grosor del texto
-    color: 'green', //color del texto
+  mainText: {
+    fontSize: 22,
+    fontWeight: '600',
+    color: 'green',
   },
-  subText: { //texto secundario "Departamento de Medioambiente"
-    fontSize: 13, //tamaño
-    fontWeight: '400', //grosor
-    color: 'green', //color
+  subText: {
+    fontSize: 13,
+    fontWeight: '400',
+    color: 'green',
   },
-  buttonText: { // buttonText del pressable
-    color: '#fff', //color
-    fontWeight: '500', //grosor
+  buttonText: {
+    color: '#fff',
+    fontWeight: '500',
   },
   touchableButton: {
     padding: 10,
@@ -89,8 +80,10 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   iconTextContainer: {
-    flexDirection: 'row', 
-    alignItems: 'center',  
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 });
+
+
 
