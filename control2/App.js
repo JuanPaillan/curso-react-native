@@ -1,20 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// INTEGRANTES: Juan Paillan, Jorge Ruiz
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import TopArtistsScreen from './screens/TopArtistsScreen'; //apunta a TopArtistsScreen
+import ArtistDetailScreen from './screens/ArtistDetailScreen'; //apunta a ArtistDetailScreen
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="TopArtists">
+        <Stack.Screen 
+          name="TopArtists" 
+          component={TopArtistsScreen} 
+          options={{ title: 'Top Artistas Chilenos' }}
+        />
+        <Stack.Screen 
+          name="ArtistDetail" 
+          component={ArtistDetailScreen} 
+          options={{ title: 'Información del Artista' }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
