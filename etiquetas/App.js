@@ -5,51 +5,90 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import icon from './assets/LOG_AMBIENTE.png';
-import HomeScreen from './HomeScreen';
+import icon from './assets/LOG_AMBIENTE.png'; // Imagen local de logotipo
+import HomeScreen from './HomeScreen'; //componente pantalla home
 
 const Stack = createNativeStackNavigator();
 
-function MainScreen({ navigation }) { 
+function MainScreen({ navigation }) { //pantalla principal
   return (
     <LinearGradient colors={['#f58723', '#fbbb0c', '#0b110d']} style={styles.container}>
       <View style={styles.container}>
-        <Image source={icon} style={{ width: 250, height: 250 }} />
+        <Image source={icon} style={{ width: 250, height: 250 }} /> 
         <Text style={styles.mainText}>Municipalidad de Quinchao</Text>
         <Text style={styles.subText}>Departamento de Medioambiente</Text>
         <StatusBar style="auto" />
 
-        <View style={{ marginVertical: 50 }}> 
-          <Pressable
+        <View style={{ marginVertical: 5 }}>
+          <Button //boton con alerta al hacer click
+            title="Pulsa aquí"
+            color="#39b54a"
+            onPress={() => Alert.alert('¡Alerta!', 'Este es un mensaje con button')}
+          />
+        </View>
+
+        <View style={{ marginVertical: 5 }}>
+          <TouchableHighlight //TouchableHighlight con alerta al hacer click
+            onPress={() => Alert.alert('¡Alerta!', 'Aguante touchable')}
+            underlayColor='#cce7cc'
+            style={{ padding: 9, backgroundColor: '#19cc98', borderRadius: 7 }}
+          >
+            <Text style={{ color: '#fff' }}>Presiona Aquí</Text>
+          </TouchableHighlight>
+        </View>
+
+        <View style={{ marginVertical: 5 }}>
+          <Pressable //Pressable con alerta al hacer click
+            onPress={() => Alert.alert('¡Alerta!', 'Botón con icono de Google')}
+            style={({ pressed }) => [
+              styles.pressableButton,
+              { backgroundColor: pressed ? '#cce7cc' : '#39b54a' }
+            ]}
+          >
+            <View style={styles.iconTextContainer}>
+              <Icon name="google" size={20} color="#fff" style={{ marginRight: 5 }} />
+              <Text style={styles.buttonText}>Presione Aquí</Text>
+            </View>
+          </Pressable>
+        </View>
+
+        <View style={{ marginVertical: 15 }}> 
+          <Pressable //boton de navegacion para el home
             onPress={() => navigation.navigate('Home')}
             style={({ pressed }) => [
-            styles.pressableButton,
-            { backgroundColor: pressed ? '#cce7cc' : '#39b54a' }
-          ]}
-        >
+              styles.pressableButton,
+              { backgroundColor: pressed ? '#cce7cc' : '#39b54a' }
+            ]}
+          >
             <View style={styles.iconTextContainer}>
-             <Icon name="user" size={20} color="#fff" style={{ marginRight: 5 }} />
+              <Icon name="user" size={20} color="#fff" style={{ marginRight: 5 }} />
               <Text style={styles.buttonText}>Iniciar Sesión</Text>
             </View>
           </Pressable>
         </View>
 
+        <Image //imagen desde url de internet
+          source={{ uri: 'https://static-00.iconduck.com/assets.00/google-icon-2048x673-w3o7skkh.png' }}
+          style={styles.googleLogo}
+        />
       </View>
     </LinearGradient>
   );
 }
 
+//pantallas principal y home
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Main" component={MainScreen} />
+        <Stack.Screen name="Main" component={MainScreen} /> 
         <Stack.Screen name="Home" component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
+//estilos para los componentes
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -70,11 +109,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: '500',
   },
-  touchableButton: {
-    padding: 10,
-    backgroundColor: '#19cc98',
-    borderRadius: 8,
-  },
   pressableButton: {
     padding: 10,
     borderRadius: 5,
@@ -83,7 +117,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  googleLogo: {
+    width: 150,
+    height: 50,
+    marginTop: 20,
+  },
 });
+
+
 
 
 
