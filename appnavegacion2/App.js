@@ -11,17 +11,17 @@ export default function App() {
   };
   return (
     //fondo degradado con lineargradient 
-    <LinearGradient colors={['#d2232b', '#7d222a', '#0a0c0d']} style={styles.container}>
+    <LinearGradient colors={['#6ca4bc', '#6c99b2', '#0a0c0d']} style={styles.container}>
       <View style={styles.albumCoverContainer}>
         <View style={styles.shadowContainer}>
           <Image //imagen de la portada
-          source={{ uri: 'https://images.genius.com/e5cfbe8cfba6296b28ab86576df41f99.1000x1000x1.png' }} 
+          source={{ uri: 'https://static.wixstatic.com/media/e9a402_8604209056154386804caebad08aeadd~mv2.jpg/v1/fill/w_568,h_568,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/e9a402_8604209056154386804caebad08aeadd~mv2.jpg' }} 
           style={styles.albumCover}
           />
         </View>
         <View style={styles.textContainer}> 
-          <Text style={styles.MainText}>Vea Pues</Text> 
-          <Text style={styles.SubText}>Easykid</Text>
+          <Text style={styles.MainText}>KIMYE</Text> 
+          <Text style={styles.SubText}>FaceBrooklyn</Text>
         </View> 
       </View>
       
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
   },
   albumCoverContainer: {
     alignItems: 'center',
-    marginBottom: 20,
+    marginBottom: 15,
   },
   shadowContainer: {
     width: 250,
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 10 },
     shadowOpacity: 0.5,
     shadowRadius: 10,
-    elevation: 10,
+    elevation: 15,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   
   textContainer: {
     alignItems: 'center',
-    marginTop: 10,
+    marginTop: 5,
   },
   MainText: {
     fontSize: 20,
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   iconContainer: {
-    marginVertical: 30,
+    marginVertical: 35,
   },
   controlsContainer: {
     flexDirection: 'row',
