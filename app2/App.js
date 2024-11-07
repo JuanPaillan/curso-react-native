@@ -15,7 +15,7 @@ export default function App() {
         <Text style={styles.subText}>Departamento de Medioambiente</Text>
 
         <Image
-        source={{ uri: 'https://static-00.iconduck.com/assets.00/google-icon-2048x673-w3o7skkh.png' }} //imagen de internet de google
+        source={{ uri: 'https://m.fastbase.com/frontpage/assets/images/google-signin-btn.png' }} //imagen de internet de google
         style={styles.googleLogo}
       />
 
