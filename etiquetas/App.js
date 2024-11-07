@@ -67,8 +67,8 @@ function MainScreen({ navigation }) { //pantalla principal
           </Pressable>
         </View>
 
-        <Image //imagen desde url de internet
-          source={{ uri: 'https://static-00.iconduck.com/assets.00/google-icon-2048x673-w3o7skkh.png' }}
+        <Image //imagen desde url de internet del icono de google
+          source={{ uri: 'https://m.fastbase.com/frontpage/assets/images/google-signin-btn.png' }}
           style={styles.googleLogo}
         />
       </View>
@@ -118,8 +118,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   googleLogo: {
-    width: 150,
-    height: 50,
+    width: 190,
+    height: 40,
     marginTop: 20,
   },
 });
