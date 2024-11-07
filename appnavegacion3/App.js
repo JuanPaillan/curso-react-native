@@ -15,27 +15,31 @@ function MainScreen({ navigation }) {
       <Text style={styles.title}>Seleccione una opción</Text>
       
       <View style={styles.iconContainer}>
-        <Pressable
-          onPress={() => navigation.navigate('Home')} //navega a la pantalla home al hacer click
-          style={({ pressed }) => [
-            styles.pressableButton,
-            { backgroundColor: pressed ? '#ffebcd' : '#e77e1b' }, //cambio de color al hacer click
-          ]}
-        >
-          <Icon name="home" size={30} color="#fff" style={styles.icon} />
+        <View style={styles.buttonContainer}>
+          <Pressable
+            onPress={() => navigation.navigate('Home')} //navega a la pantalla home al hacer click
+            style={({ pressed }) => [
+              styles.pressableButton,
+              { backgroundColor: pressed ? '#ffebcd' : '#e77e1b' }, //cambia de color al hacer click
+            ]}
+          >
+            <Icon name="home" size={30} color="#fff" style={styles.icon} />
+          </Pressable>
           <Text style={styles.buttonText}>Home</Text>
-        </Pressable>
+        </View>
 
-        <Pressable
-          onPress={() => navigation.navigate('Settings')} //navega a la pantalla settings al hacer click
-          style={({ pressed }) => [
-            styles.pressableButton,
-            { backgroundColor: pressed ? '#e0f2f1' : '#008080' }, //cambio de color al hacer click
-          ]}
-        >
-          <Icon name="cog" size={30} color="#fff" style={styles.icon} />
+        <View style={styles.buttonContainer}>
+          <Pressable
+            onPress={() => navigation.navigate('Settings')} //navega a la pantalla settings al hacer click
+            style={({ pressed }) => [
+              styles.pressableButton,
+              { backgroundColor: pressed ? '#e0f2f1' : '#008080' }, //cambia de color al hacer click
+            ]}
+          >
+            <Icon name="cog" size={30} color="#fff" style={styles.icon} />
+          </Pressable>
           <Text style={styles.buttonText}>Settings</Text>
-        </Pressable>
+        </View>
       </View>
     </View>
   );
@@ -71,19 +75,24 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     width: '60%',
   },
-  pressableButton: {
+  buttonContainer: {
     alignItems: 'center',
-    padding: 15,
-    borderRadius: 10,
-    width: 100,
+  },
+  pressableButton: {
+    width: 80,
+    height: 80,
+    borderRadius: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 4,
   },
   buttonText: {
     fontSize: 16,
-    color: '#fff',
+    color: '#000000',
     marginTop: 5,
   },
   icon: {
-    marginBottom: 5,
+    marginBottom: 0,
   },
 });
 
