@@ -112,6 +112,7 @@ const styles = StyleSheet.create({
     width: '100%',
     maxWidth: 350,
     marginBottom: 20,
+    borderRadius: 15,
   },
   header: {
     flexDirection: 'row',
@@ -119,9 +120,9 @@ const styles = StyleSheet.create({
   },
   icon: {
     marginRight: 10,
-    backgroundColor: '#634ca2', // Fondo morado para el icono
-    borderRadius: 20, // Hace que el icono sea circular
-    padding: 5, // Añade espacio dentro del círculo
+    backgroundColor: '#634ca2',
+    borderRadius: 20,
+    padding: 5,
   },
   title: {
     fontSize: 18,
@@ -146,7 +147,7 @@ const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: 200,
-    borderRadius: 10,
+    borderRadius: 15,
     marginTop: 10,
     resizeMode: 'cover',
   },
