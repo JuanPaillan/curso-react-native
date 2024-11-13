@@ -9,9 +9,6 @@ export default function App() {
       style={styles.container}
     >
       <StatusBar style="auto" />
-
-      {/* ScrollView para permitir desplazamiento si es necesario */}
-      <ScrollView contentContainerStyle={styles.scrollView}>
         <View style={styles.card}>
           <Image //card 1
             source={{ uri: 'https://estacion40.com.py/wp-content/uploads/2024/09/el-reguetonero-jhay-cortez-incluyo-a-venezuela-en-su-gira-106268.jpg' }}
@@ -35,7 +32,6 @@ export default function App() {
             Artista puertorriqueño que fusiona reggaetón, trap y pop, destacado por sus melodías pegajosas y letras emocionales.
           </Text>
         </View>
-      </ScrollView>
     </LinearGradient>
   );
 }
@@ -45,14 +41,14 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 29,
+    padding: 30,
   },
   scrollView: {
     alignItems: 'center',
   },
   card: {
     backgroundColor: 'white',
-    borderRadius: 10,
+    borderRadius: 15,
     overflow: 'hidden',
     width: '100%',
     maxWidth: 350,
@@ -68,7 +64,7 @@ const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: 200,
-    borderRadius: 10,
+    borderRadius: 15,
     resizeMode: 'cover', 
   },
   artistName: {
