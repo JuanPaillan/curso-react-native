@@ -1,14 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, ScrollView, Linking, Image, View, Text } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient'; // Importamos LinearGradient
-import { Card, Title, Paragraph, Button } from 'react-native-paper'; // Importamos componentes de React Native Paper
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'; // Importamos Icon de react-native-vector-icons
+import { LinearGradient } from 'expo-linear-gradient'; //se importa LinearGradient
+import { Card, Title, Paragraph, Button } from 'react-native-paper'; //se importa componentes de React Native Paper
+import Icon from 'react-native-vector-icons/Ionicons'; //se importa icon de react-native-vector-icons
 
 export default function App() {
   return (
     <LinearGradient
-      colors={['#fb5c90', '#0e0b29', '#08643d']} // Colores para el degradado
+      colors={['#fb5c90', '#0e0b29', '#08643d']} //colores para el degradado
       style={styles.container}
     >
       <StatusBar style="auto" />
@@ -19,9 +19,9 @@ export default function App() {
           <Card.Content>
             <View style={styles.header}>
               <Icon
-                name="music-note"
+                name="musical-notes-sharp"
                 size={30}
-                color="#ffffff" // Color blanco para el icono
+                color="#ffffff" //color blanco para el icono
                 style={styles.icon}
               />
               <View>
@@ -41,7 +41,6 @@ export default function App() {
           <Card.Actions style={styles.cardActions}>
             <Button
               mode="contained"
-              buttonColor="white"
               onPress={() => Linking.openURL('https://open.spotify.com/intl-es/artist/5pughe5rcsOq3GF0utMOs5')}
             >
               Spotify
@@ -60,9 +59,9 @@ export default function App() {
           <Card.Content>
             <View style={styles.header}>
               <Icon
-                name="music-note"
+                name="musical-notes-sharp"
                 size={30}
-                color="#ffffff" // Color blanco para el icono
+                color="#ffffff" //color blanco para el icono
                 style={styles.icon}
               />
               <View>
@@ -104,7 +103,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 20,
+    padding: 30,
   },
   scrollView: {
     alignItems: 'center',
@@ -130,7 +129,7 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 14,
-    color: 'gray',
+    color: 'black',
   },
   artistName: {
     fontSize: 16,
@@ -141,7 +140,7 @@ const styles = StyleSheet.create({
   },
   description: {
     fontSize: 14,
-    color: 'black',
+    color: 'gray',
     marginTop: 10,
   },
   image: {
